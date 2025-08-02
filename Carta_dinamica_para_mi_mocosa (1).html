@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi mocosa hermosa</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, #ffefef, #ffdada);
+            color: #5a1a1a;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            color: #b30000;
+        }
+        .letter {
+            background-color: #fff7f7;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-align: left;
+        }
+        .signature {
+            margin-top: 30px;
+            text-align: right;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            transform: rotate(45deg);
+            animation: float 10s linear infinite;
+            opacity: 0.6;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+        .heart::after {
+            left: -10px;
+            top: 0;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+        iframe {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feliz Día de la Novia, mi mocosa hermosa</h1>
+        <div class="letter">
+            <p>Mi mocosa hermosa,</p>
+            <p>Hoy me dijeron que es el Día de la Novia… y aunque no lo sabía, no podía dejar pasar la oportunidad de recordarte lo mucho que significas para mí. Porque tenerte, incluso en la distancia, es tener algo que vale más que cualquier fecha en el calendario.</p>
+            <p>Tienes los ojos más hermosos del mundo, y no lo digo por exagerar. Lo digo porque cada vez que los recuerdo, me siento en casa. Y tu sonrisa… es perfecta. Es de esas que no solo se ven, sino que se sienten. Me alegra los días, me calma el alma, y me enamora cada vez más.</p>
+            <p>Sé que estamos lejos, pero eso no cambia lo que eres para mí: mi persona especial, mi refugio, mi mocosa hermosa que se ganó mi corazón sin pedir permiso.</p>
+            <p>Gracias por existir, por quedarte, por quererme con esa ternura que solo tú sabes dar. Feliz Día de la Novia, amor. Un día, no solo te lo voy a escribir… te lo voy a decir al oído, mirándote a los ojos.</p>
+            <p>Te amo.</p>
+            <div class="signature">Con todo mi corazón,<br>Tu novio</div>
+        </div>
+        <iframe src="https://www.youtube.com/embed/XUBdHRfY5Dk?autoplay=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="hearts">
+        <script>
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+                heart.style.opacity = Math.random();
+                document.querySelector('.hearts').appendChild(heart);
+            }
+        </script>
+    </div>
+</body>
+</html>
